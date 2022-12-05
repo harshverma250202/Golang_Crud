@@ -2,15 +2,22 @@ package server
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/gorilla/handlers"
 	"github.com/harsh/project/internal/routes"
 	"github.com/harsh/project/supertoken"
+	"github.com/joho/godotenv"
 	"github.com/supertokens/supertokens-golang/supertokens"
 )
 
 func Server() {
+
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 	supertoken.SuperTokens()
 	fmt.Println("Server started at port 8000")
 	router := routes.Routes()

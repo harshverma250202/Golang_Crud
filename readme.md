@@ -20,9 +20,20 @@ Folder structure
 
         tests -> contains the test files
 
+        frontend -> contains react frontend to test the supertoken
+
 Steps to Run the projects 1) change the database configurations in .env 2) chagne the supertoken configuration in .env 3) open terminal, run the command ""go run main.go""
 
 API request Flow
 
     request-> main.go ->cmd/server.go -> internal/routes/routes.go -> internal/service/service.go->
     internal/repository/repository.go -> internal/db/db.go and internal/model/model.go
+
+Running Frontend
+
+        1) run ""npm i"" in frontend folders terminal
+        2) npm start
+
+supertokens
+        1) Api are not yet protect with supertoken verifysession middleware .
+

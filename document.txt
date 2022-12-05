@@ -12,5 +12,4 @@ CREATE TABLE users (
     password varchar(255)
 );
 
-
 nodemon --exec go run main.go --signal SIGTERM

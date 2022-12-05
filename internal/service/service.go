@@ -10,6 +10,8 @@ import (
 	"github.com/harsh/project/internal/repository"
 )
 
+
+
 func GetUser(w http.ResponseWriter, r *http.Request) {
 	idx := mux.Vars(r)["id"]
 	id, err := strconv.Atoi(idx)

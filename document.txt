@@ -1,0 +1,16 @@
+docker command
+
+docker run --name postgresql -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -v /data:/var/lib/postgresql/data -d postgres
+
+docker run --name my-pgadmin -p 82:80 -e 'PGADMIN_DEFAULT_EMAIL=admin@admin.com' -e 'PGADMIN_DEFAULT_PASSWORD=admin'-d dpage/pgadmin4
+docker inspect postgresql -f “{{json .NetworkSettings.Networks }}”
+
+CREATE TABLE users (
+    id        SERIAL PRIMARY KEY,
+    name varchar(255) NOT NULL,
+    email varchar(255),
+    password varchar(255)
+);
+
+
+nodemon --exec go run main.go --signal SIGTERM
